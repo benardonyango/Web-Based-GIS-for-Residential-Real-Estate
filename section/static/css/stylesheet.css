@@ -1,0 +1,82 @@
+body {
+  padding-top: 70px;
+  /*background-color: #aed6f1;*/
+}
+
+body h3, h4, p, li {
+  font-family: 'Marmelad';
+}
+
+/* B A S E */
+#footer_info {
+  /*  */
+  margin-top: 20px;
+  background-color: #eee;
+  min-height: 150px;
+  border-top: 2px solid #C0C0C0; 
+}
+
+footer {
+  height: 30px;
+  /*padding-bottom: -10px;*/
+  background-color: #F8F8F8;
+  border-top: 1px solid #C0C0C0;
+}
+
+footer p {
+  text-align: center;
+  padding-top: 12px;
+}
+
+
+/* H O M E */
+.mycontainer {
+  min-height: 400px;
+}
+
+.mypanel {
+  min-height: 400px;
+}
+
+.section-heading-spacer {
+  border-top: 3px solid #e7e7e7;
+  width: 200px;
+  float: center;
+}
+.section-heading-spacer2 {
+  border-top: 2px solid white;
+  margin-top: -5px;
+  width: 100%;
+  float: left;
+}
+.section-heading-spacer3 {
+  border-top: 2px solid #e7e7e7;
+  margin-top: -5px;
+  width: 100%;
+  float: left;
+}
+
+#map {
+  min-height: 530px;
+  width:100%;
+}
+
+/* INPUT TYPE FILE STYLE */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block;
+}

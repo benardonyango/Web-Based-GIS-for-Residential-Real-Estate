@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}    
+{% block content %}
+  <!-- Start slider  -->
+  <section id="aa-slider">
+    <div class="aa-slider-area"> 
+      <!-- Top slider -->
+      <div class="aa-top-slider">
+        <!-- Top slider single slide -->
+        <div class="aa-top-slider-single">
+          <img src="{% static 'img/slider/slider_1.jpg' %}" alt="img">      
+        </div>     
+        <div class="aa-top-slider-single">
+          <img src="{% static 'img/slider/slider_2.jpg' %}" alt="img">
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

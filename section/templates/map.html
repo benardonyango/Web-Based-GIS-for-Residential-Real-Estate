@@ -1,0 +1,100 @@
+{% extends "base2.html" %}
+
+
+{% load staticfiles %}
+
+{% block extra_head %}
+<!-- JQuery ui -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+<![endif]-->
+<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+<!-- Full Screen Control -->
+<link rel="stylesheet" href="{% static 'css/leaflet_plugins/Control.FullScreen.css' %}" />
+
+<script type="text/javascript" src="{% static 'js/leaflet_map/leaflet_plugins/Control.FullScreen.js' %}"></script>
+
+<!-- Sidebar control -->
+<link rel="stylesheet" href="{% static 'css/leaflet_plugins/L.Control.Sidebar.css' %}" />
+<script type="text/javascript" src="{% static 'js/leaflet_map/leaflet_plugins/L.Control.Sidebar.js' %}"></script>
+{% endblock %}
+
+{% block content%}
+<div class="container mycontainer">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3>Map Filter</h3>
+      <hr class="section-heading-spacer3">
+      <div class="clearfix"></div>
+      <p><i class="fa fa-plus-square-o"></i> <a href='#' id="filter_control" style="text-decoration:none; color:inherit;">Show Filter</a></p>
+      <div id="map" class="thumbnail"> </div>
+      <hr>
+    </div>
+  </div>
+</div>
+<!-- /.container -->
+
+<!-- Sidebar -->
+<div class="well" id="sidebar">
+  <h4>Map Filter</h4><hr>
+  <p><strong>Sale/Rent:</strong></p>
+  <select class="form-control" id="select_sale_rent" onchange="getResult()">
+      <option value="all">Show All</option>
+      <option disabled>---------------------------------------</option>         
+      <option value="sale">sale</option>
+      <option value="rent">rent</option>
+  </select>      
+  <br>  
+  <p><strong>Price:</strong></p>
+  <p><span id="lbl" style="font-family:Marmelad;">0 $ - 50000000 $</span></p>
+  <div id="slider_price" data-value="" style="width:100%; margin-left: 6px;"></div>      
+  <br>
+  <p><strong>House Type:</strong></p>
+  <select class="form-control" id="select_house_type" onchange="getResult()">
+      <option value="all">Show All</option>
+      <option disabled>---------------------------------------</option>         
+      <option value="House">House</option>
+      <option value="Apartment/Flat">Apartment/Flat</option>
+      <option value="Town_House">Town House</option>
+      <option value="Duplex">Duplex</option>
+  </select>      
+  <br> 
+  <p><strong>Number of Beds:</strong></p>
+  <select class="form-control" id="select_beds" onchange="getResult()">
+      <option value="all">Show All</option>
+      <option disabled>---------------------------------------</option>         
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+  </select>      
+  <br> 
+  <p><strong>Number of Baths:</strong></p>
+  <select class="form-control" id="select_baths" onchange="getResult()">
+      <option value="all">Show All</option>
+      <option disabled>---------------------------------------</option>         
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+  </select>      
+  
+</div>
+{% endblock %}
+
+{% block extra_body %}
+<script src="{% static 'js/leaflet_map/map.js' %}"></script>
+{% endblock %}
